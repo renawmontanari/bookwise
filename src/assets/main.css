@@ -1,13 +1,6 @@
 :root {
-  --ocre: #d1451e;
-  --coral: #f0633c;
-  --coral-claro: #ffdbd1;
-  --creme: #fffaf3;
-  --verde-escuro: #263a29;
-  --verde-medio: #3d6d4a;
-  --cinza: #444444;
-  --cinza-claro: #efefef;
-  --branco: #fff;
+  --text-primary: #6d214f;
+  --background-primary: #f8f4e3;
 
   --font-family-padrao: Nunito Sans, sans-serif;
   --cabecalhos: Paytone One, sans-serif;
@@ -34,12 +27,13 @@ button {
 
 body {
   min-height: 100vh;
-  color: var(--creme);
+  color: var(--text-primary);
   font-family: var(--font-family-padrao);
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
-  background: url("./imagens/fundo-banner.png"), var(--verde-escuro, #263a29);
+  background: url("./imagens/fundo-banner.png"),
+    var(--background-primary, #f8f4e3);
 }
 
 .cabecalho-lg {
