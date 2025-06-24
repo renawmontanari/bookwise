@@ -65,26 +65,26 @@ body::before {
   line-height: 150%; /* 2.90625em */
 }
 
-.paragrafo-lg {
+.subtitle-lg {
   font-size: 1.375em;
   line-height: 150%; /* 2.90625em */
 }
 
-.paragrafo {
+.subtitle {
   font-size: 1.125em;
   line-height: 150%; /* 1.6875em */
 }
 
 @media only screen and (max-width: 767px) {
-  .cabecalho-lg {
+  .header-lg {
     font-size: 2.75em;
   }
 
-  .cabecalho {
+  .header {
     font-size: 2.3125em;
   }
 
-  .subtitulo-lg {
+  .subtitle-lg {
     font-size: 1.625em;
   }
 }
