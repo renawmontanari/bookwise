@@ -11,7 +11,7 @@ export default {
 <template>
   <main class="main-content">
     <section>
-      <span class="subtitle-lg your-list-text"> Sua lista: </span>
+      <span class="subtitle-lg your-list-text"> Informações do livro: </span>
 
       <ul class="your-list-information">
         <li v-for="information in informations" class="information">
