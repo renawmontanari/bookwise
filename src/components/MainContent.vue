@@ -13,11 +13,23 @@ export default {
     <section>
       <span class="subtitle-lg your-list-text"> Informações do livro: </span>
 
-      <ul class="your-list-information">
-        <li v-for="information in informations" class="information">
+      <ul v-if="informations.length" class="your-list-information">
+        <li
+          v-for="information in informations"
+          :key="information"
+          class="information"
+        >
           {{ information }}
         </li>
       </ul>
+
+      <p v-else class="paragrafo empty-list">
+        <img
+          src="../assets/images/icones/lista-vazia.svg"
+          alt="Icone de pesquisa"
+        />
+        As informações estão vazias, selecione as informações para iniciar
+      </p>
     </section>
   </main>
 </template>
@@ -61,7 +73,7 @@ export default {
   font-weight: 700;
 }
 
-.lista-vazia {
+.empty-list {
   display: flex;
   justify-content: center;
   align-items: center;
