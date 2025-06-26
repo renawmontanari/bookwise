@@ -1,8 +1,10 @@
 <script lang="ts">
+import { getCategories } from "@/http/index";
+
 export default {
   data() {
     return {
-      categories: [],
+      categories: getCategories(),
     };
   },
 };
@@ -17,7 +19,11 @@ export default {
     </p>
 
     <ul class="categories">
-      <li v-for="categorie in categories" :key="categorie.name"></li>
+      <li v-for="categorie in categories" :key="categorie.name">
+        {{ categorie.name }}
+        <img :src="categorie.img" :alt="categorie.name" />
+        {{ categorie.information[0] }}
+      </li>
     </ul>
 
     <p class="paragraph tip">
