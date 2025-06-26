@@ -1,8 +1,13 @@
 <script lang="ts">
+import SelectInformation from "./SelectInformation.vue";
+
 export default {
+  components: {
+    SelectInformation: SelectInformation,
+  },
   data() {
     return {
-      informations: ["Romance", "Classico", "2024", "Autor"],
+      informations: ["Nome", "Gênero", "2024", "Autor"],
     };
   },
 };
@@ -31,6 +36,8 @@ export default {
         As informações estão vazias, selecione as informações para iniciar
       </p>
     </section>
+
+    <SelectInformation />
   </main>
 </template>
 
