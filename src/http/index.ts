@@ -1,76 +1,65 @@
+import senhorDosAneisImg from "../assets/images/imgBooks/osenhordosaneis-asda.jpg";
+import orwell1984Img from "../assets/images/imgBooks/1984.jpg";
+import cemAnosSolidaoImg from "../assets/images/imgBooks/100cads.jpg";
+import pequenoPrincipeImg from "../assets/images/imgBooks/opp.jpg";
+import domQuixoteImg from "../assets/images/imgBooks/dq.jpg";
+
 export function getCategories() {
   return [
     {
       name: "O Senhor dos Anéis: A Sociedade do Anel",
-      img: "",
-      genre: "Fantasia Aventura",
-      countryOrigin: "Reino Unido",
-      author: "J. R. R. Tolkien",
-      year: 1954,
-      pages: 576,
+      img: senhorDosAneisImg,
+      information: [
+        "Fantasia Aventura",
+        "Reino Unido",
+        "J. R. R. Tolkien",
+        1954,
+        576,
+      ],
     },
     {
       name: "1984",
-      img: "",
-      genre: "Ficção Distópica",
-      countryOrigin: "Reino Unido",
-      author: "George Orwell",
-      year: 1949,
-      pages: 328,
+      img: orwell1984Img,
+      information: [
+        "Ficção Distópica",
+        "Reino Unido",
+        "George Orwell",
+        1949,
+        328,
+      ],
     },
     {
       name: "Cem Anos de Solidão",
-      img: "",
-      genre: "Realismo Mágico",
-      countryOrigin: "Colômbia",
-      author: "Gabriel García Márquez",
-      year: 1967,
-      pages: 417,
+      img: cemAnosSolidaoImg,
+      information: [
+        "Realismo Mágico",
+        "Colômbia",
+        "Gabriel García Márquez",
+        1967,
+        417,
+      ],
     },
     {
       name: "O Pequeno Príncipe",
-      img: "",
-      genre: "Literatura Infantil Filosófica",
-      countryOrigin: "França",
-      author: "Antoine de Saint-Exupéry",
-      year: 1943,
-      pages: 96,
+      img: pequenoPrincipeImg,
+      information: [
+        "Literatura Infantil Filosófica",
+        "França",
+        "Antoine de Saint-Exupéry",
+        1943,
+        96,
+      ],
     },
     {
       name: "Dom Quixote",
-      img: "",
-      genre: "Romance Satírico",
-      countryOrigin: "Espanha",
-      author: "Miguel de Cervantes",
-      year: 1605,
-      pages: 1072,
-    },
-    {
-      name: "Crime e Castigo",
-      img: "",
-      genre: "Romance Psicológico",
-      countryOrigin: "Rússia",
-      author: "Fiódor Dostoiévski",
-      year: 1866,
-      pages: 551,
-    },
-    {
-      name: "Orgulho e Preconceito",
-      img: "",
-      genre: "Romance",
-      countryOrigin: "Reino Unido",
-      author: "Jane Austen",
-      year: 1813,
-      pages: 432,
-    },
-    {
-      name: "A Metamorfose",
-      img: "",
-      genre: "Ficção Absurda",
-      countryOrigin: "Áustria-Hungria",
-      author: "Franz Kafka",
-      year: 1915,
-      pages: 80,
+      img: domQuixoteImg,
+      information: [
+        "Romance Satírico",
+        "Espanha",
+        "Miguel de Cervantes",
+        1605,
+        1072,
+      ],
     },
   ];
 }
