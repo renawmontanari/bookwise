@@ -4,8 +4,11 @@ import { getCategories } from "@/http/index";
 export default {
   data() {
     return {
-      categories: getCategories(),
+      categories: [],
     };
+  },
+  async created() {
+    this.categories = await getCategories();
   },
 };
 </script>
@@ -22,7 +25,7 @@ export default {
       <li v-for="categorie in categories" :key="categorie.name">
         {{ categorie.name }}
         <img :src="categorie.img" :alt="categorie.name" />
-        {{ categorie.information[0] }}
+        {{ categorie.information[0] }}{{ categorie.information[3] }}
       </li>
     </ul>
 
