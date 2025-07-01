@@ -1,3 +1,11 @@
+import type ICategories from "@/interfaces/ICategories";
+
+interface ApiResponse {
+  record: {
+    books: ICategories[];
+  };
+}
+
 export async function getCategories() {
   const response = await fetch(
     "https://api.jsonbin.io/v3/b/686316378a456b7966b91aa6",
@@ -9,7 +17,7 @@ export async function getCategories() {
     }
   );
 
-  const information = await response.json();
+  const information: ApiResponse = await response.json();
 
   return information.record.books;
 }

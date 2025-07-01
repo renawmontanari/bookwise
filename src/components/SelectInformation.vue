@@ -1,10 +1,11 @@
 <script lang="ts">
 import { getCategories } from "@/http/index";
+import type ICategories from "@/interfaces/ICategories";
 
 export default {
   data() {
     return {
-      categories: [],
+      categories: [] as ICategories[],
     };
   },
   async created() {
