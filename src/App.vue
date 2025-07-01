@@ -1,7 +1,6 @@
 <script lang="ts">
 import Banner from "./components/Banner.vue";
 import MainContent from "./components/MainContent.vue";
-import SelectInformation from "./components/SelectInformation.vue";
 
 export default {
   components: {
