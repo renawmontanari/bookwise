@@ -28,7 +28,7 @@ export default {
 
     <ul class="categories">
       <li v-for="categorie in categories" :key="categorie.name">
-        <CardCategorie />
+        <CardCategorie :categorie="categorie" />
       </li>
     </ul>
 
