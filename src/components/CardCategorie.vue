@@ -12,12 +12,8 @@ export default {
 <template>
   <article class="categorie">
     <header class="categorie__header">
-      <img
-        :src="`/imagens/icones/categorias_ingredientes/${categorie.img}`"
-        alt=""
-        class="categorie__img"
-      />
-      <p>{{ categorie.img }}</p>
+      <img src="" alt="" class="categorie__img" />
+      <h2 class="paragrafo-lg categoria__nome">{{ categorie.name }}</h2>
     </header>
   </article>
 </template>
