@@ -12,8 +12,12 @@ export default {
 <template>
   <article class="categorie">
     <header class="categorie__header">
-      <img :src="`${categorie.image}`" alt="" class="categorie__img" />
-      <h2 class="paragrafo-lg categoria__nome">{{ categorie.title }}</h2>
+      <h2 class="paragrafo-lg categoria__nome">{{ categorie.genre }}</h2>
     </header>
+    <ul class="categoria__ingredientes">
+      <li v-for="categorie in categorie.themes" :key="categorie">
+        {{ categorie }}
+      </li>
+    </ul>
   </article>
 </template>
