@@ -12,7 +12,7 @@ export default {
 <template>
   <article class="categorie">
     <header class="categorie__header">
-      <img src="" alt="" class="categorie__img" />
+      <img :src="`${categorie.image}`" alt="" class="categorie__img" />
       <h2 class="paragrafo-lg categoria__nome">{{ categorie.title }}</h2>
     </header>
   </article>
