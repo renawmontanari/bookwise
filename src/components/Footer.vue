@@ -6,7 +6,7 @@ export default {
 
 <template>
   <footer>
-    <p>&copy; 2023 Bookwise. All rights reserved.</p>
+    <p>&copy; 2025 Bookwise. Todos os direitos reservados.</p>
   </footer>
 </template>
 
