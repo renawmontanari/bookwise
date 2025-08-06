@@ -6,14 +6,27 @@ export default {
 
 <template>
   <footer>
-    <div>
-      <div>
+    <div class="footer-content">
+      <div class="footer-left">
         <p>Feito por Renan Dev</p>
         <img src="/public/renandev.png" alt="Renan Dev" />
       </div>
-      <p>&copy; 2025 Bookwise. Todos os direitos reservados.</p>
+      <div>
+        <p>&copy; 2025 Bookwise. Todos os direitos reservados.</p>
+      </div>
     </div>
   </footer>
 </template>
 
-<script scoped></script>
+<style scoped>
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 40px;
+}
+
+.footer-left {
+  display: flex;
+}
+</style>
