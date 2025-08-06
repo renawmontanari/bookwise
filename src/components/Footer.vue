@@ -6,7 +6,13 @@ export default {
 
 <template>
   <footer>
-    <p>&copy; 2025 Bookwise. Todos os direitos reservados.</p>
+    <div>
+      <div>
+        <p>Feito por Renan Dev</p>
+        <img src="/public/renandev.png" alt="Renan Dev" />
+      </div>
+      <p>&copy; 2025 Bookwise. Todos os direitos reservados.</p>
+    </div>
   </footer>
 </template>
 
