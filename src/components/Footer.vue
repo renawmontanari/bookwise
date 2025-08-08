@@ -23,7 +23,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 40px;
+  margin: 40px 170px 40px 170px;
 }
 
 .footer-left {
