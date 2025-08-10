@@ -46,7 +46,10 @@ export default {
       @search-books="navigate('ShowBooks')"
     />
 
-    <ShowBooks v-else-if="content === 'ShowBooks'" />
+    <ShowBooks
+      v-else-if="content === 'ShowBooks'"
+      @edit-books="navigate('SelectGenres')"
+    />
   </main>
 </template>
 
