@@ -15,6 +15,7 @@ export default {
   components: {
     CardCategorie,
   },
+  emits: ["addCategorie"],
 };
 </script>
 
@@ -28,7 +29,10 @@ export default {
 
     <ul class="categories">
       <li v-for="categorie in categories" :key="categorie.id">
-        <CardCategorie :categorie="categorie" />
+        <CardCategorie
+          :categorie="categorie"
+          @add-categorie="$emit('addCategorie', $event)"
+        />
       </li>
     </ul>
 

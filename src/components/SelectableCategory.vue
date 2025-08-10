@@ -16,15 +16,21 @@ export default {
       selected: false,
     };
   },
+  methods: {
+    clickCategorie() {
+      this.selected = !this.selected;
+
+      if (this.selected) {
+        this.$emit("addCategorie", this.categorie);
+      }
+    },
+  },
+  emits: ["addCategorie"],
 };
 </script>
 
 <template>
-  <button
-    class="categorie"
-    @click="selected = !selected"
-    :aria-pressed="selected"
-  >
+  <button class="categorie" @click="clickCategorie" :aria-pressed="selected">
     <Tag :text="categorie" :active="selected" />
   </button>
 </template>

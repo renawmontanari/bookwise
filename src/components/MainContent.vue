@@ -11,8 +11,13 @@ export default {
   },
   data() {
     return {
-      informations: ["Nome", "Gênero", "2024", "Autor"],
+      informations: [] as string[],
     };
+  },
+  methods: {
+    addInformation(information: string) {
+      this.informations.push(information);
+    },
   },
 };
 </script>
@@ -21,7 +26,7 @@ export default {
   <main class="main-content">
     <YouList :informations="informations" />
 
-    <SelectInformation />
+    <SelectInformation @add-categorie="addInformation" />
   </main>
 </template>
 

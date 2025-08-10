@@ -12,6 +12,7 @@ export default {
     Tag,
     SelectableCategory,
   },
+  emits: ["addCategorie"],
 };
 </script>
 
@@ -22,7 +23,10 @@ export default {
     </header>
     <ul class="categorie__information">
       <li v-for="categorie in categorie.themes" :key="categorie">
-        <SelectableCategory :categorie="categorie" />
+        <SelectableCategory
+          :categorie="categorie"
+          @add-categorie="$emit('addCategorie', $event)"
+        />
       </li>
     </ul>
   </article>
