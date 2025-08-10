@@ -22,10 +22,12 @@ export default {
 
       if (this.selected) {
         this.$emit("addCategorie", this.categorie);
+      } else {
+        this.$emit("removeCategorie", this.categorie);
       }
     },
   },
-  emits: ["addCategorie"],
+  emits: ["addCategorie", "removeCategorie"],
 };
 </script>
 

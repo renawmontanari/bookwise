@@ -12,7 +12,7 @@ export default {
     Tag,
     SelectableCategory,
   },
-  emits: ["addCategorie"],
+  emits: ["addCategorie", "removeCategorie"],
 };
 </script>
 
@@ -26,6 +26,7 @@ export default {
         <SelectableCategory
           :categorie="categorie"
           @add-categorie="$emit('addCategorie', $event)"
+          @remove-categorie="$emit('removeCategorie', $event)"
         />
       </li>
     </ul>

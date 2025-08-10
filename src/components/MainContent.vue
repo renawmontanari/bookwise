@@ -18,6 +18,11 @@ export default {
     addInformation(information: string) {
       this.informations.push(information);
     },
+    removeCategorie(information: string) {
+      this.informations = this.informations.filter(
+        (youList) => information !== youList
+      );
+    },
   },
 };
 </script>
@@ -26,7 +31,10 @@ export default {
   <main class="main-content">
     <YouList :informations="informations" />
 
-    <SelectInformation @add-categorie="addInformation" />
+    <SelectInformation
+      @add-categorie="addInformation"
+      @remove-categorie="removeCategorie"
+    />
   </main>
 </template>
 
