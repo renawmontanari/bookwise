@@ -17,7 +17,7 @@ export default {
     CardCategorie,
     MainButton,
   },
-  emits: ["addCategorie", "removeCategorie"],
+  emits: ["addCategorie", "removeCategorie", "searchBooks"],
 };
 </script>
 
@@ -43,7 +43,7 @@ export default {
       "Atenção: consideramos que você já conheça alguns dos livros"
     </p>
 
-    <MainButton text="Buscar Livros" />
+    <MainButton text="Buscar Livros" @click="$emit('searchBooks')" />
   </section>
 </template>
 

@@ -2,16 +2,21 @@
 import SelectInformation from "./SelectInformation.vue";
 import Tag from "../components/Tag.vue";
 import YouList from "../components/YouList.vue";
+import ShowBooks from "../components/ShowBooks.vue";
+
+type Page = "SelectGenres" | "ShowBooks";
 
 export default {
   components: {
     SelectInformation: SelectInformation,
     Tag: Tag,
     YouList: YouList,
+    ShowBooks: ShowBooks,
   },
   data() {
     return {
       informations: [] as string[],
+      content: "SelectGenres" as Page,
     };
   },
   methods: {
@@ -23,6 +28,9 @@ export default {
         (youList) => information !== youList
       );
     },
+    navigate(page: Page) {
+      this.content = page;
+    },
   },
 };
 </script>
@@ -32,9 +40,13 @@ export default {
     <YouList :informations="informations" />
 
     <SelectInformation
+      v-if="content === 'SelectGenres'"
       @add-categorie="addInformation"
       @remove-categorie="removeCategorie"
+      @search-books="navigate('ShowBooks')"
     />
+
+    <ShowBooks v-else-if="content === 'ShowBooks'" />
   </main>
 </template>
 
