@@ -2,6 +2,7 @@
 import type ICategories from "@/interfaces/ICategories";
 import type { PropType } from "vue";
 import Tag from "../components/Tag.vue";
+import SelectableCategory from "../components/SelectableCategory.vue";
 
 export default {
   props: {
@@ -9,6 +10,7 @@ export default {
   },
   components: {
     Tag,
+    SelectableCategory,
   },
 };
 </script>
@@ -20,7 +22,7 @@ export default {
     </header>
     <ul class="categorie__information">
       <li v-for="categorie in categorie.themes" :key="categorie">
-        <Tag :text="categorie" />
+        <SelectableCategory :categorie="categorie" />
       </li>
     </ul>
   </article>
