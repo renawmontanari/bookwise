@@ -2,6 +2,7 @@
 import { getCategories } from "@/http/index";
 import type ICategories from "@/interfaces/ICategories";
 import CardCategorie from "./CardCategorie.vue";
+import MainButton from "../components/MainButton.vue";
 
 export default {
   data() {
@@ -14,6 +15,7 @@ export default {
   },
   components: {
     CardCategorie,
+    MainButton,
   },
   emits: ["addCategorie", "removeCategorie"],
 };
@@ -40,6 +42,8 @@ export default {
     <p class="paragraph tip">
       "Atenção: consideramos que você já conheça alguns dos livros"
     </p>
+
+    <MainButton text="Buscar Livros" />
   </section>
 </template>
 
