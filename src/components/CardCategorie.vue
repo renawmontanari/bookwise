@@ -15,7 +15,11 @@ export default {
       <h2 class="subtitle-lg categorie__genre">{{ categorie.genre }}</h2>
     </header>
     <ul class="categorie__information">
-      <li v-for="categorie in categorie.themes" :key="categorie">
+      <li
+        class="categorie__theme"
+        v-for="categorie in categorie.themes"
+        :key="categorie"
+      >
         {{ categorie }}
       </li>
     </ul>
@@ -59,5 +63,12 @@ export default {
   justify-content: center;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+
+.categorie__theme {
+  color: #ffffff;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: var(--text-tertiary, #a35c80);
 }
 </style>
