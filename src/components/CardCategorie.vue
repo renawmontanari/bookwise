@@ -1,10 +1,14 @@
 <script lang="ts">
 import type ICategories from "@/interfaces/ICategories";
 import type { PropType } from "vue";
+import Tag from "./Tag.vue";
 
 export default {
   props: {
     categorie: { type: Object as PropType<ICategories>, required: true },
+  },
+  components: {
+    Tag,
   },
 };
 </script>
@@ -15,12 +19,8 @@ export default {
       <h2 class="subtitle-lg categorie__genre">{{ categorie.genre }}</h2>
     </header>
     <ul class="categorie__information">
-      <li
-        class="categorie__theme"
-        v-for="categorie in categorie.themes"
-        :key="categorie"
-      >
-        {{ categorie }}
+      <li v-for="categorie in categorie.themes" :key="categorie">
+        <Tag :text="categorie" />
       </li>
     </ul>
   </article>
@@ -63,12 +63,5 @@ export default {
   justify-content: center;
   gap: 0.5rem;
   flex-wrap: wrap;
-}
-
-.categorie__theme {
-  color: #ffffff;
-  padding: 4px;
-  border-radius: 5px;
-  background-color: var(--text-tertiary, #a35c80);
 }
 </style>

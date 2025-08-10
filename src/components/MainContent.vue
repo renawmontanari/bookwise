@@ -1,9 +1,11 @@
 <script lang="ts">
 import SelectInformation from "./SelectInformation.vue";
+import Tag from "./Tag.vue";
 
 export default {
   components: {
     SelectInformation: SelectInformation,
+    Tag: Tag,
   },
   data() {
     return {
@@ -19,12 +21,8 @@ export default {
       <span class="subtitle-lg your-list-text"> Informações do livro: </span>
 
       <ul v-if="informations.length" class="your-list-information">
-        <li
-          v-for="information in informations"
-          :key="information"
-          class="information"
-        >
-          {{ information }}
+        <li v-for="information in informations" :key="information">
+          <Tag :text="information" active />
         </li>
       </ul>
 
@@ -66,18 +64,6 @@ export default {
   justify-content: center;
   gap: 1rem 1.5rem;
   flex-wrap: wrap;
-}
-
-.information {
-  display: inline-block;
-  border-radius: 0.5rem;
-  min-width: 4.25rem;
-  padding: 0.5rem;
-  text-align: center;
-  transition: 0.2s;
-  color: var(--background-primary, #f8f4e3);
-  background: var(--text-secundary, #8b3a62);
-  font-weight: 700;
 }
 
 .empty-list {
