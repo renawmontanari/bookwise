@@ -1,7 +1,7 @@
 <script lang="ts">
 import type ICategories from "@/interfaces/ICategories";
 import type { PropType } from "vue";
-import Tag from "./Tag.vue";
+import Tag from "../components/Tag.vue";
 
 export default {
   props: {
