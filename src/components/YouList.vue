@@ -36,18 +36,6 @@ export default {
 </template>
 
 <style scoped>
-.main-content {
-  padding: 6.5rem 7.5rem;
-  border-radius: 3.75rem 3.75rem 0rem 0rem;
-  background: var(--background-primary, #f8f4e3);
-  color: var(--cinza, #444);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5rem;
-}
-
 .your-list-text {
   color: var(--text-primary, #6d214f);
   display: block;
