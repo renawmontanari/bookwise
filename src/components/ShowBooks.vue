@@ -3,18 +3,36 @@ import type ICategories from "@/interfaces/ICategories";
 import MainButton from "../components/MainButton.vue";
 import { getCategories } from "@/http";
 import CardBook from "./CardBook.vue";
+import type { PropType } from "vue";
 
 export default {
   name: "ShowBooks",
+  props: {
+    selectedThemes: {
+      type: Array as PropType<string[]>,
+      default: () => [],
+    },
+  },
   data() {
     return {
       foundBooks: [] as ICategories[],
     };
   },
   async created() {
-    const books = await getCategories();
+    const allBooks = await getCategories();
 
-    this.foundBooks = books.slice(0, 8);
+    // Filtrar livros baseado nos temas selecionados
+    if (this.selectedThemes.length > 0) {
+      this.foundBooks = allBooks.filter((book) => {
+        // Verifica se o livro tem pelo menos um dos temas selecionados
+        return this.selectedThemes.some((theme) =>
+          book.themes.includes(theme)
+        );
+      });
+    } else {
+      // Se nenhum tema foi selecionado, mostra todos os livros
+      this.foundBooks = allBooks;
+    }
   },
   components: {
     MainButton,
@@ -39,8 +57,8 @@ export default {
       </p>
 
       <ul class="books">
-        <li v-for="book of foundBooks" :key="book.nome">
-          <CardBook :book="book" />
+        <li v-for="book of foundBooks" :key="book.id">
+          <CardBook :categorie="book" />
         </li>
       </ul>
     </div>
@@ -57,7 +75,7 @@ export default {
       />
     </div>
 
-    <MainButton texto="Editar lista" @click="$emit('editBooks')" />
+    <MainButton text="Editar lista" @click="$emit('editBooks')" />
   </section>
 </template>
 

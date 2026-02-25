@@ -48,6 +48,7 @@ export default {
 
     <ShowBooks
       v-else-if="content === 'ShowBooks'"
+      :selected-themes="informations"
       @edit-books="navigate('SelectGenres')"
     />
   </main>
