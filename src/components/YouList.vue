@@ -27,8 +27,9 @@ export default {
 
     <p v-else class="paragrafo empty-list">
       <img
-        src="../assets/images/icones/lista-vazia.svg"
+        src="../assets/images/icones/lista-vazia.png"
         alt="Icone de pesquisa"
+        class="color-icon"
       />
       As informações estão vazias, selecione as informações para iniciar
     </p>
@@ -57,9 +58,10 @@ export default {
   flex-wrap: wrap;
   gap: 0.25rem;
 
-  color: var(--coral, #f0633c);
+  color: var(--coral,rgb(153, 16, 142));
   text-align: center;
 }
+
 
 @media only screen and (max-width: 1300px) {
   .main-content {
