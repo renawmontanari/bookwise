@@ -6,7 +6,6 @@ Aplicação desenvolvida em Vue.js com foco em prática de componentização, ge
 # Tecnologias 
 
 - VueJs
-- Tailwind 
 
 
 ## Project Setup
