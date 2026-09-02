@@ -6,16 +6,28 @@ interface ApiResponse {
   };
 }
 
-export async function getCategories() {
-  const response = await fetch(
-    "https://api.jsonbin.io/v3/b/686316378a456b7966b91aa6",
-    {
-      headers: {
-        "X-Master-Key":
-          "$2a$10$$2a$10$5mJ1V0Shf4UPJTlfw0uXbOiLdfkjcWqaze6pYDy5GzqtmOEjUeGD2",
-      },
-    }
-  );
+const BOOKS_URL = "https://api.jsonbin.io/v3/b/686316378a456b7966b91aa6";
+
+export async function getCategories(): Promise<ICategories[]> {
+  const masterKey = import.meta.env.VITE_XMASTER_KEY;
+
+  if (!masterKey) {
+    throw new Error(
+      "VITE_XMASTER_KEY não definida. Copie o .env.example para .env e preencha a chave.",
+    );
+  }
+
+  const response = await fetch(BOOKS_URL, {
+    headers: {
+      "X-Master-Key": masterKey,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(
+      `Falha ao buscar os livros: ${response.status} ${response.statusText}`,
+    );
+  }
 
   const information: ApiResponse = await response.json();
 
